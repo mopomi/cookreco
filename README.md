@@ -16,7 +16,7 @@
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
 | title      | string     | null: false                    |
-| Genre_id   | integer    | null: false                    |
+| genre_id   | integer    | null: false                    |
 | point      | text       |                                |
 | user       | references | null: false, foreign_key: true |
 
