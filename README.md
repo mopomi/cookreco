@@ -1,42 +1,24 @@
-# テーブル設計
+# README
 
-## users テーブル
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-| Column     | Type   | Options     |
-| ---------- | ------ | ----------- |
-| email      | string | null: false |
-| password   | string | null: false |
-| name       | string | null: false |
+Things you may want to cover:
 
-### Association
+* Ruby version
 
-- has_many :recipes
-- has_many :memos
+* System dependencies
 
+* Configuration
 
-## recipes テーブル
+* Database creation
 
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| title      | string     | null: false                    |
-| Genre_id   | integer    | null: false                    |
-| point      | text       |                                |
-| user       | references | null: false, foreign_key: true |
+* Database initialization
 
-### Association
+* How to run the test suite
 
-- belongs_to :user
-- has_many :memos
+* Services (job queues, cache servers, search engines, etc.)
 
-## memos テーブル
+* Deployment instructions
 
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| text      | text       | null: false                    |
-| user      | references | null: false, foreign_key: true |
-| prototype | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :recipe
+* ...
