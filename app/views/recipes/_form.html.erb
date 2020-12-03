@@ -1,0 +1,31 @@
+<%= form_with model: @recipe, url: recipes_path, local: true do |f| %>
+  <div class="field">
+    <%= f.label :title, "お料理名" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :genre_id, "ジャンル" %><br />
+    <%= f.text_area :genre_id, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url, "レシピURL" %><br />
+    <%= f.text_area :url, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :point, "ポイント" %><br />
+    <%= f.text_area :point, class: :form__text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "プロトタイプの画像" %><br />
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
+
