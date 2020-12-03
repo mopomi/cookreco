@@ -18,6 +18,7 @@
 | title      | string     | null: false                    |
 | genre_id   | integer    | null: false                    |
 | point      | text       |                                |
+| url        | string     |                                |
 | user       | references | null: false, foreign_key: true |
 
 # Association

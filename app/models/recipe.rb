@@ -1,10 +1,14 @@
 class Recipe < ApplicationRecord
 
-  validates :title, presence: true do
-  validates :genre_id  presence: true do
+ with_options presence: true do
+  validates :title
+  validates :genre_id
   validates :image
+ end
+
 
   belongs_to :user
   has_many   :momes
   has_one_attached :image
+
 end
