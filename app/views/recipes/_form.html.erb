@@ -1,4 +1,6 @@
-<%= form_with model: @recipe, url: recipes_path, local: true do |f| %>
+<%= form_with model: @recipe, local: true do |f| %>
+ <%= render 'shared/error_messages', model: f.object %>
+ 
   <div class="field">
     <%= f.label :title, "お料理名" %><br />
     <%= f.text_field :title %>
@@ -6,7 +8,7 @@
 
   <div class="field">
     <%= f.label :genre_id, "ジャンル" %><br />
-    <%= f.text_area :genre_id, class: :form__text %>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form__text"}) %>
   </div>
 
   <div class="field">
@@ -20,7 +22,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :image, "プロトタイプの画像" %><br />
+    <%= f.label :image, "料理画像" %><br />
     <%= f.file_field :image %>
   </div>
 

@@ -37,7 +37,7 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
+  background-color: #f8c030;
   margin-bottom: 48px;
   padding: 20px 0;
 
@@ -58,10 +58,10 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #f38154;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #f38154 solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
@@ -81,6 +81,8 @@ a {
 .nav__logout:hover{
   opacity: 0.5;
 }
+
+
 
 /* フォーム周り */
 .form__wrapper{
@@ -319,5 +321,20 @@ a {
   }
   .table{
     width: 100%;
+  }
+
+
+  .search-form {
+    text-align: center;
+    padding-top: 32px;
+  }
+
+    .search-form .search-input {
+    width: 30%;
+    margin-right: 10px;
+  }
+
+  .search-form .search-btn {
+    width: 10%;
   }
 }
