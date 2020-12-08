@@ -160,9 +160,7 @@ a {
 
 
 .form__wrapper {
-  height: calc(100vh - 350px);
   width: 900px;
-
 }
 
 .form__wrapper {
