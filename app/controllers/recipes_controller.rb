@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :move_to_index, only: [:edit, :destroy]
+  before_action :authenticate_user!, except: [:index, :show, :search, :genre]
+  before_action :move_to_index, only: [:edit, :destroy ]
 
   def index
     @recipes = Recipe.includes(:user).order('created_at DESC')
@@ -48,7 +48,14 @@ class RecipesController < ApplicationController
     @recipes = Recipe.search(params[:keyword])
   end
 
-
+  def genre
+    @recipe = Recipe.find_by(genre_id: params[:id])
+    @recipes = Recipe.where(genre_id: params[:id]).order('created_at DESC')
+    if @recipe
+    else
+    redirect_to action: :index
+    end
+  end
 
   private
 
@@ -60,6 +67,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     unless @recipe.user == current_user
     redirect_to action: :index
-  end
+    end
   end
 end

@@ -2,28 +2,28 @@
  <%= render 'shared/error_messages', model: f.object %>
  
   <div class="field">
-    <%= f.label :title, "お料理名" %><br />
-    <%= f.text_field :title %>
+    <span class="must">必須</span><%= f.label :title, "お料理名" %><br />
+    <%= f.text_field :title, class: :form__text %>
   </div>
 
   <div class="field">
-    <%= f.label :genre_id, "ジャンル" %><br />
+    <span class="must">必須</span><%= f.label :genre_id, "カテゴリー" %><br />
     <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form__text"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :url, "レシピURL" %><br />
+    <span class="must">必須</span><%= f.label :url, "レシピURL" %><br />
     <%= f.text_area :url, class: :form__text %>
   </div>
 
   <div class="field">
-    <%= f.label :point, "ポイント" %><br />
+    <span class="free">任意</span><%= f.label :point, "ポイント" %><br />
     <%= f.text_area :point, class: :form__text %>
   </div>
 
   <div class="field">
-    <%= f.label :image, "料理画像" %><br />
-    <%= f.file_field :image %>
+    <span class="must">必須</span><%= f.label :image, "料理画像" %><br />
+    <%= f.file_field :image,class: :form__text %>
   </div>
 
   <div class="actions">
