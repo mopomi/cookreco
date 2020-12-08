@@ -1,8 +1,9 @@
 <main class="main">
   <div class="inner">
+  <div class="box15">
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
-        <%= @recipe.title %>
+        <h1 class=show><%= @recipe.title %></h1>
       <%# <%= link_to "by プロトタイプの投稿者", root_path, class: :prototype__user %> 
       <% if user_signed_in? && current_user.id == @recipe.user_id%>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
@@ -12,38 +13,46 @@
         </div>
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+       <div class="box">
+         <div class="box-img">
       <div class="prototype__image">
         <%= image_tag @recipe.image %>
       </div>
+         </div>
+     <div class="box-text">
       <div class="prototype__body">
         <div class="prototype__detail">
-          <p class="detail__title">ジャンル</p>
+          <p class="detail__title">ジャンル：</p>
           <p class="detail__message">
             <%= @recipe.genre.name %>
           </p>
         </div>
         <div class="prototype__detail">
-          <p class="detail__title">レシピURL</p>
+          <p class="detail__title">レシピURL：
           <p class="detail__message">
-            <%= @recipe.url %>
-          </p>
+          <div class="url_rinku">
+            <%= raw Rinku.auto_link(h(@recipe.url)) %>
+          </div>
+        </p>
         </div>
        <% if user_signed_in? && current_user.id == @recipe.user_id %>
         <div class="prototype__detail">
-          <p class="detail__title">ポイント</p>
+          <p class="detail__title">ポイント：</p>
           <p class="detail__message">
             <%= @recipe.point %>
        <% end %>
           </p>
+         </div>
         </div>
+       </div>
       </div>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? && current_user.id == @recipe.user_id %>
           <%= form_with model: [@recipe, @memo], local: true do |f| %>
             <div class="field">
-              <%= f.label :text, "メモ" %><br/>
-              <%= f.text_field :text %>
+              <%= f.label :text, "memo" %><br/>
+              <%= f.text_field :text, placeholder: "メモする", class: :memo_text %>
             </div>
             <div class="actions">
               <%= f.submit "送信する", class: :form__btn %>

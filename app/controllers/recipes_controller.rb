@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :move_to_index, only: [:edit, :destroy]
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :move_to_index, only: [:edit, :destroy ]
 
   def index
     @recipes = Recipe.includes(:user).order('created_at DESC')
