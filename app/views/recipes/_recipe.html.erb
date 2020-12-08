@@ -5,7 +5,7 @@
   <div class="card__body">
 <p class="sample_box11_subtitle"><%= link_to recipe.title, recipe_path(recipe.id), class: :card__title%>  
     <p> <class="card__summary">
-      <p>ジャンル：<%= link_to recipe.genre.name, root_path, class: :card__summary%></p>
+      <p>カテゴリー：<%= link_to recipe.genre.name, root_path, class: :card__summary%></p>
       <p>by：<%= recipe.user.name %></p>
     </p>
     <%# <%= link_to "by プロトタイプの投稿者名", root_path, class: :card__user %> 

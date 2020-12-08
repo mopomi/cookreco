@@ -12,9 +12,47 @@
 </div>
 <main class="main">
 <div class="inner">
+ <h1 class="show">カテゴリー</h1>
+<table>
+<tr>
+  <td><%= link_to '野菜', '/recipes/genre/2'%></td>
+  <td><%= link_to '豚肉', '/recipes/genre/3'%></td>
+  <td><%= link_to '牛肉', '/recipes/genre/4'%></td>
+  <td><%= link_to '鶏肉', '/recipes/genre/5'%></td>
+  <td><%= link_to '魚介', '/recipes/genre/6'%></td>
+</tr>
+<tr>
+  <td><%= link_to 'ごはんもの', '/recipes/genre/7'%></td>
+  <td><%= link_to 'パスタ', '/recipes/genre/8'%></td>
+  <td><%= link_to '麺', '/recipes/genre/9'%></td>
+  <td><%= link_to 'サラダ', '/recipes/genre/10'%></td>
+  <td><%= link_to 'スープ・汁物', '/recipes/genre/11'%></td>
+</tr>
+<tr>
+  <td><%= link_to 'お弁当', '/recipes/genre/12'%></td>
+  <td><%= link_to 'おもてなし', '/recipes/genre/13'%></td>
+  <td><%= link_to '洋菓子', '/recipes/genre/14'%></td>
+  <td><%= link_to '和菓子', '/recipes/genre/15'%></td>
+  <td><%= link_to 'パン', '/recipes/genre/16'%></td>
+</tr>
+<tr>
+  <td><%= link_to '揚げもの', '/recipes/genre/17'%></td>
+  <td><%= link_to '鍋もの', '/recipes/genre/18'%></td>
+  <td><%= link_to 'たまご', '/recipes/genre/19'%></td>
+  <td><%= link_to '粉もの', '/recipes/genre/20'%></td>
+  <td><%= link_to '離乳食', '/recipes/genre/21'%></td>
+</tr>
+<tr>
+  <td><%= link_to 'ヘルシーおかず', '/recipes/genre/22'%></td>
+  <td><%= link_to 'ソース・ドレッシング', '/recipes/genre/23'%></td>
+  <td><%= link_to 'おつまみ', '/recipes/genre/24'%></td>
+  <td><%= link_to '海藻・乾物', '/recipes/genre/25'%></td>
+  <td><%= link_to 'ドリンク', '/recipes/genre/26'%></td>
+</tr>
+</table>
+<br>
  <h1 class="show">みんなのお料理</h1>
- 
-  <%= form_with(url: search_recipes_path, local: true, method: :get, class: "search_container") do |form| %>
+   <%= form_with(url: search_recipes_path, local: true, method: :get, class: "search_container") do |form| %>
   <%= form.text_field :keyword, placeholder: "お料理を検索する", class: "search_container" %>
   <%= form.submit "検索", class: "search_container" %>
 <% end %>

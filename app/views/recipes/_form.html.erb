@@ -7,7 +7,7 @@
   </div>
 
   <div class="field">
-    <span class="must">必須</span><%= f.label :genre_id, "ジャンル" %><br />
+    <span class="must">必須</span><%= f.label :genre_id, "カテゴリー" %><br />
     <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"form__text"}) %>
   </div>
 

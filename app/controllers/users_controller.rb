@@ -7,9 +7,7 @@ class UsersController < ApplicationController
     @recipes =current_user.recipes.order('created_at DESC')
   end
 
-
   private
-
     def move_to_index
      @user = User.find(params[:id])
       unless @user == current_user

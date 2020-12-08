@@ -7,5 +7,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  get '/recipes/genre/:id', to: "recipes#genre"
   resources :users, only: :show
 end
