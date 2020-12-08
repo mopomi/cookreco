@@ -1,10 +1,14 @@
 <div class="card">
-  <%= link_to image_tag(recipe.image, class: :card__img ), recipe_path(recipe.id), method: :get %>
+  <div class="sample_box11">
+<div class="sample_box11_tape"> </div>
+<p class="sample_box11_title"><%= link_to image_tag(recipe.image, class: :card__img ), recipe_path(recipe.id), method: :get %></p>
   <div class="card__body">
-    <%= link_to recipe.title, recipe_path(recipe.id), class: :card__title%>
-    <p class="card__summary">
-      <%= "レシピジャンル" %>
+<p class="sample_box11_subtitle"><%= link_to recipe.title, recipe_path(recipe.id), class: :card__title%>  
+    <p> <class="card__summary">
+      <p>ジャンル：<%= link_to recipe.genre.name, root_path, class: :card__summary%></p>
+      <p>by：<%= recipe.user.name %></p>
     </p>
     <%# <%= link_to "by プロトタイプの投稿者名", root_path, class: :card__user %> 
   </div>
+</div>
 </div>

@@ -1,57 +1,77 @@
 <main class="main">
   <div class="inner">
+  <div class="box15">
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
-        <%= @recipe.title %>
+        <h1 class=show><%= @recipe.title %></h1>
       <%# <%= link_to "by プロトタイプの投稿者", root_path, class: :prototype__user %> 
+      <% if user_signed_in? && current_user.id == @recipe.user_id%>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
         <div class="prototype__manage">
-          <%= link_to "編集する", root_path, class: :prototype__btn %>
-          <%= link_to "削除する", root_path, class: :prototype__btn %>
+          <%= link_to "編集する", edit_recipe_path(@recipe), class: :prototype__btn %>
+          <%= link_to "削除する", recipe_path(@recipe), class: :prototype__btn, method: :delete %>
         </div>
+      <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
+       <div class="box">
+         <div class="box-img">
       <div class="prototype__image">
         <%= image_tag @recipe.image %>
       </div>
+         </div>
+     <div class="box-text">
       <div class="prototype__body">
         <div class="prototype__detail">
-          <p class="detail__title">ジャンル</p>
+          <p class="detail__title">ジャンル：</p>
           <p class="detail__message">
-            <%= "プロトタイプのキャッチコピー" %>
+            <%= @recipe.genre.name %>
           </p>
         </div>
         <div class="prototype__detail">
-          <p class="detail__title">レシピURL</p>
+          <p class="detail__title">レシピURL：
           <p class="detail__message">
-            <%= @recipe.url %>
-          </p>
+          <div class="url_rinku">
+            <%= raw Rinku.auto_link(h(@recipe.url)) %>
+          </div>
+        </p>
         </div>
+       <% if user_signed_in? && current_user.id == @recipe.user_id %>
         <div class="prototype__detail">
-          <p class="detail__title">ポイント</p>
+          <p class="detail__title">ポイント：</p>
           <p class="detail__message">
             <%= @recipe.point %>
+       <% end %>
           </p>
+         </div>
         </div>
+       </div>
       </div>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-          <%# <%= form_with local: true do |f|%>
+        <% if user_signed_in? && current_user.id == @recipe.user_id %>
+          <%= form_with model: [@recipe, @memo], local: true do |f| %>
             <div class="field">
-              <%# <%= f.label :hoge, "コメント" %><br />
-              <%# <%= f.text_field :hoge %>
+              <%= f.label :text, "memo" %><br/>
+              <%= f.text_field :text, placeholder: "メモする", class: :memo_text %>
             </div>
             <div class="actions">
-              <%# <%= f.submit "送信する", class: :form__btn  %>
+              <%= f.submit "送信する", class: :form__btn %>
             </div>
-          <%# <% end %> 
+          <% end %>
         <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+          <% if @memos %>
+          <% @memos.each do |memo| %>
             <li class="comments_list">
-              <%# <%= " コメントのテキスト "%>
+              <%= memo.text %>          
               <%# <%= link_to "（ ユーザー名 ）", root_path, class: :comment_user %>
             </li>
+            <% end %>
+             <% end %>
+        <% end %>
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
+          
         </ul>
       </div>
     </div>

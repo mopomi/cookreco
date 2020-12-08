@@ -1,7 +1,9 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :move_to_index, only: [:edit, :destroy ]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -19,6 +21,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @memo = Memo.new
+    @memos = @recipe.memos.includes(:user)
   end
 
   def edit
@@ -31,10 +35,18 @@ class RecipesController < ApplicationController
        redirect_to recipe_path
     else
       render :edit
+    end
   end
   
+  def destroy
+    recipe = Recipe.find(params[:id])
+    recipe.destroy
+    redirect_to root_path
+  end
 
-
+  def search
+    @recipes = Recipe.search(params[:keyword])
+  end
 
 
 
@@ -42,5 +54,12 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:title, :image, :genre_id, :point, :url).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    @recipe = Recipe.find(params[:id])
+    unless @recipe.user == current_user
+    redirect_to action: :index
+  end
   end
 end
