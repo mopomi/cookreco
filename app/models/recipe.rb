@@ -9,7 +9,6 @@ class Recipe < ApplicationRecord
   validates :title
   validates :image
   validates :genre_id, numericality: { other_than: 1 }
-  validates :url, format: /\A#{URI::regexp(%w(http https))}\z/
  end
 
  def self.search(search)
