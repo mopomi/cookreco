@@ -3,6 +3,7 @@ ja:
    attributes:
      user:
        name: ニックネーム
-     tweet:
-       text: テキスト
+     recipe:
+       title: お料理名
        image: 画像
+       genre_id: カテゴリー
