@@ -7,8 +7,8 @@ class Recipe < ApplicationRecord
 
  with_options presence: true do
   validates :title
-  validates :image
-  validates :genre_id, numericality: { other_than: 1 }
+  validates :image, presence: { message: 'を選択してください' }
+  validates :genre_id, numericality: { other_than: 1, message: 'を選択してください' }
  end
 
  def self.search(search)
