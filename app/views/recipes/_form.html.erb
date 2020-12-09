@@ -12,7 +12,7 @@
   </div>
 
   <div class="field">
-    <span class="must">必須</span><%= f.label :url, "レシピURL" %><br />
+    <span class="free">任意</span><%= f.label :url, "レシピURL" %><br />
     <%= f.text_area :url, class: :form__text %>
   </div>
 
@@ -25,6 +25,7 @@
     <span class="must">必須</span><%= f.label :image, "料理画像" %><br />
     <%= f.file_field :image,class: :form__text %>
   </div>
+  <div id="image-list"></div>
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
