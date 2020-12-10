@@ -305,6 +305,10 @@ td :hover {
   margin-bottom: 40px;
 }
 
+.card__body {
+  text-align: center;
+}
+
 .card__title {
   display: block;
   font-size: 20px;
