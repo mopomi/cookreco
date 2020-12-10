@@ -3,7 +3,7 @@
  
   <div class="field">
     <span class="must">必須</span><%= f.label :title, "お料理名" %><br />
-    <%= f.text_field :title, class: :form__text %>
+    <%= f.text_field :title, placeholder: "お料理名", class: :form__text %>
   </div>
 
   <div class="field">
@@ -13,12 +13,12 @@
 
   <div class="field">
     <span class="free">任意</span><%= f.label :url, "レシピURL" %><br />
-    <%= f.text_area :url, class: :form__text %>
+    <%= f.text_area :url, placeholder: "レシピURL",class: :form__text %>
   </div>
 
   <div class="field">
     <span class="free">任意</span><%= f.label :point, "ポイント" %><br />
-    <%= f.text_area :point, class: :form__text_p %>
+    <%= f.text_area :point, placeholder: "ポイント", class: :form__text_p %>
   </div>
 
   <div class="field">
