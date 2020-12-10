@@ -316,6 +316,10 @@ td :hover {
   font-size: 16px;
 }
 
+.card__summary:hover {
+  color: #f76b34;
+}
+
 .card__user {
   display: block;
   font-size: 12px;
@@ -397,6 +401,11 @@ td :hover {
   vertical-align: middle;
 }
 
+.card__title {
+  margin: 20px;
+}
+
+
 .prototype__wrapper{
   min-height: calc(100vh - 161px);
 }
@@ -429,11 +438,11 @@ td :hover {
 }
 
 .detail__title{
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .detail__message {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .prototype__manage{
@@ -476,14 +485,9 @@ td :hover {
   list-style-type: square;
   padding-bottom: 5px;
   text-align:left;
-  font-size: 20px; 
+  font-size: 15px; 
 }
 
-.comment_user{
-  font-size: 16px;
-  color: #999;
-  text-decoration: underline;
-}
 
 .memo_text {
   width: 250px;
