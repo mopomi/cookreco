@@ -376,6 +376,13 @@ td :hover {
     color: #825700;
     display: inline-block;
     margin: 40px;
+  }
+
+.show_1 {
+  background: linear-gradient(transparent 70%, #f8c030 70%);
+    color: #825700;
+    display: inline-block;
+    margin: 40px;
     width: 300px;
   }
 
