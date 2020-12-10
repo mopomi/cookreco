@@ -333,6 +333,7 @@ td :hover {
   color: #825700;/* 文字色 */
   box-shadow: 4px 4px 4px rgba(0,0,0,0.03);
   word-break: break-all;
+  height: 360px;
 }
 
 .sample_box11 p {
