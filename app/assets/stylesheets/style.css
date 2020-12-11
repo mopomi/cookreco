@@ -41,7 +41,6 @@ a {
 .header {
   background-color: #f8c030;
   padding: 10px 0;
-
 }
 
 .main{
@@ -185,6 +184,56 @@ a {
 }
 
 .form__wrapper:after{
+	background-color: rgba(255, 169, 20, 0.9);
+	background-image: radial-gradient(#fff 20%, transparent 0), radial-gradient(#fff 20%, transparent 0); /* 水玉の色 */
+	background-position: 0 0, 8px 8px; 
+	background-size: 15px 15px; 
+	border-left: 2px dotted rgba(0,0,0,0.1);
+	border-right: 2px dotted rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  font-weight: bold;
+	content: 'cook reco';
+	display: block;
+	padding: 10px 40px;  
+	text-align: center;
+	position: absolute;
+	top: -10px;
+	left: 20px;
+	transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+}
+
+.form__wrapper2 {
+  width: 900px;
+  height: 680px;
+}
+
+.form__wrapper2 {
+	background-color: #f798233d;  /* 背景色 */
+	border-radius: 5px;
+	margin: 20px 5px; /* 外側の余白 上下・左右 */
+	padding: 30px 20px 20px 20px; /* 内側の余白 上・右・下・左 */
+	position: relative;
+  z-index: 0;
+}
+
+.form__wrapper2:before {
+	border: 1px solid #fff; /* 白い実線 */
+	border-radius: 5px;
+	content: '';
+	display: block;
+	margin: 4px;
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+  z-index: -1;
+}
+
+.form__wrapper2:after{
 	background-color: rgba(255, 169, 20, 0.9);
 	background-image: radial-gradient(#fff 20%, transparent 0), radial-gradient(#fff 20%, transparent 0); /* 水玉の色 */
 	background-position: 0 0, 8px 8px; 
