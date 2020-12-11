@@ -70,7 +70,14 @@ $ rails s
 →http://localhost:3000
 
 
+
+## DB設計
+
 ## ER図
+<img width="730" alt="スクリーンショット 2020-12-11 15 54 50" src="https://user-images.githubusercontent.com/73802103/101872966-7efe6a80-3bc9-11eb-8b46-fa72a97cfe60.png">
+
+
+
 
 # users テーブル
 | Column     | Type   | Options     |
