@@ -159,6 +159,7 @@ a {
 
 .form__wrapper {
   width: 900px;
+  height: 750px;
 }
 
 .form__wrapper {
@@ -181,7 +182,7 @@ a {
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
-	z-index: -1;
+  z-index: -1;
 }
 
 .form__wrapper:after{
