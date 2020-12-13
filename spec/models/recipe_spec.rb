@@ -7,13 +7,13 @@ describe User do
   it '画像がない場合は登録できないこと' do
     @recipe.image = nil
     @recipe.valid?
-    expect(@recipe.errors.full_messages).to include "画像を選択してください"
+    expect(@recipe.errors.full_messages).to include '画像を選択してください'
   end
 
   it 'お料理名がない場合は登録できないこと' do
     @recipe.title = ''
     @recipe.valid?
-    expect(@recipe.errors.full_messages).to include "お料理名を入力してください"
+    expect(@recipe.errors.full_messages).to include 'お料理名を入力してください'
   end
 
   it 'カテゴリーの選択がない場合は登録できないこと' do

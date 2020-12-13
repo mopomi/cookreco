@@ -25,10 +25,9 @@ class Genre < ActiveHash::Base
     { id: 23, name: 'ソース・ドレッシング' },
     { id: 24, name: 'おつまみ' },
     { id: 25, name: '海藻・乾物' },
-    { id: 26, name: 'その他' },
+    { id: 26, name: 'その他' }
   ]
- 
-   include ActiveHash::Associations
-   has_many :recipes
- 
-  end
+
+  include ActiveHash::Associations
+  has_many :recipes
+end

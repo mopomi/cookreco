@@ -11,25 +11,25 @@ describe User do
   it 'nameがない場合は登録できないこと' do
     @user.name = ''
     @user.valid?
-    expect(@user.errors.full_messages).to include "ニックネームを入力してください"
+    expect(@user.errors.full_messages).to include 'ニックネームを入力してください'
   end
 
   it 'emailがない場合は登録できないこと' do
     @user.email = ''
     @user.valid?
-    expect(@user.errors.full_messages).to include "Eメールを入力してください"
+    expect(@user.errors.full_messages).to include 'Eメールを入力してください'
   end
 
   it 'passwordがない場合は登録できないこと' do
     @user.password = ''
     @user.valid?
-    expect(@user.errors.full_messages).to include "パスワードを入力してください"
+    expect(@user.errors.full_messages).to include 'パスワードを入力してください'
   end
 
   it 'passwordが存在してもpassword_confirmationがない場合は登録できないこと' do
     @user.password_confirmation = ''
     @user.valid?
-    expect(@user.errors.full_messages).to include "パスワード（確認用）とパスワードの入力が一致しません"
+    expect(@user.errors.full_messages).to include 'パスワード（確認用）とパスワードの入力が一致しません'
   end
 
   it ' passwordが5文字以下であれば登録できないこと ' do
