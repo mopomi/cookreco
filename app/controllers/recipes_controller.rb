@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search, :genre]
-  before_action :move_to_index, only: [:edit, :destroy ]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @recipes = Recipe.includes(:user).order('created_at DESC')
@@ -32,12 +32,12 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     if @recipe.update(recipe_params)
-       redirect_to recipe_path
+      redirect_to recipe_path
     else
       render :edit
     end
   end
-  
+
   def destroy
     recipe = Recipe.find(params[:id])
     recipe.destroy
@@ -53,7 +53,7 @@ class RecipesController < ApplicationController
     @recipes = Recipe.where(genre_id: params[:id]).order('created_at DESC')
     if @recipe
     else
-    redirect_to action: :index
+      redirect_to action: :index
     end
   end
 
@@ -65,8 +65,6 @@ class RecipesController < ApplicationController
 
   def move_to_index
     @recipe = Recipe.find(params[:id])
-    unless @recipe.user == current_user
-    redirect_to action: :index
-    end
+    redirect_to action: :index unless @recipe.user == current_user
   end
 end
