@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
   get '/recipes/genre/:id', to: "recipes#genre"
   resources :users, only: :show
+  post   '/like/:recipe_id' => 'likes#like',   as: 'like'
+  delete '/like/:recipe_id' => 'likes#unlike', as: 'unlike'
 end

@@ -63,3 +63,5 @@ gem 'rails-i18n'
 gem 'rinku'
 gem "aws-sdk-s3", require: false
 gem 'factory_bot_rails'
+gem "jquery-rails"
+gem 'jquery-turbolinks'

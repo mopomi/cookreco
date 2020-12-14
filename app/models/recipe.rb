@@ -4,6 +4,8 @@ class Recipe < ApplicationRecord
   belongs_to :user
   has_many   :memos, dependent: :destroy
   has_one_attached :image
+  has_many :likes, dependent: :destroy
+  has_many :liking_users, through: :likes, source: :user
 
   with_options presence: true do
     validates :title
