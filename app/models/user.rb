@@ -5,4 +5,6 @@ class User < ApplicationRecord
 
   has_many :recipes
   has_many :memos
+  has_many :likes, dependent: :destroy
+  has_many :like_recipes, through: :likes, source: :story
 end

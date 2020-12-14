@@ -390,7 +390,7 @@ td :hover {
   color: #825700;/* 文字色 */
   box-shadow: 4px 4px 4px rgba(0,0,0,0.03);
   word-break: break-all;
-  height: 400px;
+  height: 440px;
 }
 
 .sample_box11 p {
@@ -681,3 +681,17 @@ td :hover {
   }
 }
 
+
+
+
+
+.iine__button{
+  background: linear-gradient(to right, #feb400, #FFE300);
+  line-height: 42px;
+  color: #6d3701;
+  font-size: 14px;
+  display: inline-block;
+  padding: 0 18px;
+  border-radius: 100px;
+  font-weight: bold;
+}

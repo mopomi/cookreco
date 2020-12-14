@@ -6,6 +6,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
       t.string      :url
       t.text        :point
       t.references  :user,      foreign_key:true
+      t.integer     :likes_count
       t.timestamps
     end
   end
