@@ -45,6 +45,7 @@
 - 削除機能
 - 画像プレビュー表示機能
 - マイページ内カテゴリー検索機能
+- いいね！機能
 
 ## 実装機能動作の様子
 
@@ -63,6 +64,7 @@
 ## 実装予定の機能
 
 - マイページ内カテゴリー検索機能
+- いいね！した投稿を一覧で確認
 
 ## ローカルでの動作方法(アプリケーションの起動）
 
@@ -89,20 +91,27 @@ $ rails s
 # Association
 - has_many :recipes
 - has_many :memos
+- has_many :likes
+- has_many :like_recipes
 
 
 # recipes テーブル
-| Column     | Type       | Options                        |
-| ---------- | ---------- | ------------------------------ |
-| title      | string     | null: false                    |
-| genre_id   | integer    | null: false                    |
-| point      | text       |                                |
-| url        | string     |                                |
-| user       | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| title       | string     | null: false                    |
+| genre_id    | integer    | null: false                    |
+| point       | text       |                                |
+| url         | string     |                                |
+| user        | references | null: false, foreign_key: true |
+| likes_count | integer    |                                |
+
 
 # Association
 - belongs_to :user
 - has_many :memos
+- belongs_to :genre
+- has_many :likes
+- has_many :liking_users
 
 
 # memos テーブル
@@ -116,3 +125,13 @@ $ rails s
 
 - belongs_to :user
 - belongs_to :recipe
+
+# likes テーブル
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| recipe    | references | null: false, foreign_key: true |
+
+- belongs_to :recipe
+- belongs_to :user
+
