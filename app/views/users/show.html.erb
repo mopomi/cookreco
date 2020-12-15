@@ -8,7 +8,8 @@
         <%= render partial: "recipes/recipe", collection: @recipes %>
       </div>
     </div>
+
+      <h3 class="show2">
+<%= link_to("#{@name}さんのいいね！した投稿はこちら", "/users/#{@user.id}/likes") %></h3>
   </div>
 </div>
-
-<%= link_to("いいね!", "/users/#{@user.id}/likes") %>
