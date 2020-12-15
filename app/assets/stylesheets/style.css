@@ -597,6 +597,12 @@ td :hover {
   min-height: calc(100vh - 161px);
 }
 
+.user__wrapper2{
+  min-height: calc(100vh - 161px);
+  display:flex;
+  justify-content: space-between;
+}
+
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
