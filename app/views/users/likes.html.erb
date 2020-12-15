@@ -1,3 +1,12 @@
+<div class="main">
+  <div class="inner">
+
+      <h2 class="show">
+        <%= @name %>さんのいいね！一覧</h2>
+            <div class="user__wrapper2"> 
+        <% @likes.each do |like| %>
+  <% recipe = Recipe.find_by(id: like.recipe_id) %>
+  <% user = User.find_by(id: recipe.user_id) %>
 <div class="card">
   <div class="sample_box11">
 <div class="sample_box11_tape"> </div>
@@ -12,5 +21,8 @@
       <% end %>
      </p>
   </div>
+</div>
+</div>
+<% end %>
 </div>
 </div>

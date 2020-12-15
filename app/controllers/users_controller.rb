@@ -7,6 +7,12 @@ class UsersController < ApplicationController
     @recipes = current_user.recipes.order('created_at DESC')
   end
 
+  def likes
+    @name = current_user.name
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id).order('created_at DESC')
+  end
+  
   private
 
   def move_to_index
