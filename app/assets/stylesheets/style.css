@@ -382,6 +382,19 @@ td :hover {
 }
 
 
+.iine__button{
+  background: linear-gradient(to right, #feb400, #FFE300);
+  line-height: 42px;
+  color: #6d3701;
+  font-size: 14px;
+  display: inline-block;
+  padding: 0 18px;
+  border-radius: 100px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+
 .sample_box11 {
   width: 88%;
   padding: 15px;
@@ -563,6 +576,12 @@ td :hover {
   border: 1px #825700 solid;
 }
 
+.comment_derete__btn {
+  font-size: 13px;
+  color: #825700;
+  text-decoration: underline;
+}
+
 .url_rinku :hover {
   color: #f76b34;
  }
@@ -607,8 +626,9 @@ td :hover {
 
 .user__wrapper2{
   min-height: calc(100vh - 161px);
-  display:flex;
   justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .table{
@@ -698,14 +718,3 @@ td :hover {
 
 
 
-
-.iine__button{
-  background: linear-gradient(to right, #feb400, #FFE300);
-  line-height: 42px;
-  color: #6d3701;
-  font-size: 14px;
-  display: inline-block;
-  padding: 0 18px;
-  border-radius: 100px;
-  font-weight: bold;
-}
