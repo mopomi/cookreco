@@ -10,6 +10,12 @@ class MemosController < ApplicationController
     end
   end
 
+  def destroy
+    @memo = Memo.find_by(id: params[:id],recipe_id: params[:recipe_id])
+    @memo.destroy
+    redirect_to recipe_path(@memo.recipe)
+  end
+
   private
 
   def memo_params

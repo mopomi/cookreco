@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :move_to_index, only: :show
+  before_action :move_to_index, only: [:show, :likes]
 
   def show
     user = User.find(params[:id])
