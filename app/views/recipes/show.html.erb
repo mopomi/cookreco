@@ -4,15 +4,12 @@
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
         <h1 class=show><%= @recipe.title %></h1>
-      <%# <%= link_to "by プロトタイプの投稿者", root_path, class: :prototype__user %> 
       <% if user_signed_in? && current_user.id == @recipe.user_id%>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_recipe_path(@recipe), class: :prototype__btn %>
           <%= link_to "削除する", recipe_path(@recipe), class: :prototype__btn, method: :delete %>
         </div>
       <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
        <div class="box">
          <div class="box-img">
       <div class="prototype__image">
@@ -47,7 +44,6 @@
        </div>
       </div>
       <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in? && current_user.id == @recipe.user_id %>
           <%= form_with model: [@recipe, @memo], local: true do |f| %>
             <div class="field">

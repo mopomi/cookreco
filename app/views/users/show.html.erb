@@ -2,14 +2,16 @@
   <div class="inner">
     <div class="user__wrapper">     
       <h2 class="show">
-        <%= @name %>さんのお料理一覧
-      </h2>
+        <%= @name %>さんのお料理一覧</h2><br>
+        <div class="show2"> 
+      <%= link_to("❤️", "/users/#{@user.id}/likes") %></div>
+
       <div class="user__card">
         <%= render partial: "recipes/recipe", collection: @recipes %>
       </div>
     </div>
-
-      <h3 class="show2">
-<%= link_to("#{@name}さんのいいね！した投稿はこちら", "/users/#{@user.id}/likes") %></h3>
+      
   </div>
 </div>
+
+
