@@ -636,7 +636,7 @@ td :hover {
 
 
 .sample_box11 {
-  width: 88%;
+  width: 315px;
   padding: 15px;
   margin: 2em auto;
   background: #fed895c8;/* 紙の色 */
@@ -644,6 +644,11 @@ td :hover {
   box-shadow: 4px 4px 4px rgba(0,0,0,0.03);
   word-break: break-all;
   height: 460px;
+  border-radius: 20px;
+  -moz-box-shadow: 10px 16px 10px -5px rgba(255, 168, 70, 0.822);
+  -webkit-box-shadow: 10px 16px 30px -5px rgba(255, 168, 70, 0.822);
+  -ms-box-shadow: 10px 16px 30px -5px rgba(255, 168, 70, 0.822);
+  box-shadow: 10px 16px 30px -5px rgba(255, 168, 70, 0.822);
 }
 
 .sample_box11 p {
