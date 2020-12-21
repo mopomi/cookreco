@@ -7,6 +7,8 @@ class Recipe < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :liking_users, through: :likes, source: :user
 
+  paginates_per 21
+
   with_options presence: true do
     validates :title
     validates :image, presence: { message: 'を選択してください' }

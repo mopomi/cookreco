@@ -66,6 +66,7 @@
 <% end %>
     <div class="card__wrapper">
      <%= render partial: "recipe", collection: @recipes %>
+     <%= paginate @recipes %>
     </div>
   </div>
 </main>
