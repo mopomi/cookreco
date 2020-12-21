@@ -66,3 +66,4 @@ gem 'factory_bot_rails'
 gem "jquery-rails"
 gem 'jquery-turbolinks'
 gem 'rails_12factor', group: :production
+gem 'kaminari', '~> 0.17.0'
